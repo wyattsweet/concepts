@@ -1,0 +1,16 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build-css": "./bin/build-css",
+    "watch-css": "./bin/watch-css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "node-sass": "^4.5.0"
+  }
+}
