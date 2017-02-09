@@ -1,7 +1,6 @@
 // Write a function fib() that takes an integer n and returns the nth fibonacci number
 // fibonacci series is 0-indexed and starts with 0
 
-var currentVal;
 function fib(n) {
   if (n == 0) {
     console.log(0);
@@ -19,4 +18,4 @@ function fib(n) {
   }
 }
 
-fib(1);
+fib(5);
