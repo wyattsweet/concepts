@@ -48,8 +48,13 @@ function checkWinner(element, playerOne) {
   var rowNum = parseInt(row[row.length-1]);
 
   var count = 1;
-  // check verticle winner
-  for (var i = rowNum; i < 6; i++) {
+  var currentRow = rowNum + 1;
+
+  ////////////////////
+  // verticle 
+  ///////////////////
+  
+  for (var i = currentRow; i <= 6; i++) {
     var classes = $('.row' + i + ' .' + col)[0].classList;
 
     classes.forEach(function(className) {
@@ -65,8 +70,10 @@ function checkWinner(element, playerOne) {
     })
   }
 
+  if (count >= 4) alert('Winner!');
+
   ////////////////////
-  // Diagonal Winner
+  // Diagonal Right
   ///////////////////
 
   // diagonal up
@@ -108,6 +115,54 @@ function checkWinner(element, playerOne) {
     })
   }
 
+  if (count >= 4) alert('Winner!');
+
+  ////////////////////
+  // Diagonal left 
+  ///////////////////
+
+  // diagonal down 
+  count = 1;
+  var currentRow = rowNum;
+  var colCutoff = (colNum + 3 > 7) ? 7 : colNum + 3;
+
+  for (var i = colNum + 1; i <= colCutoff; i++) {
+    currentRow = currentRow + 1;
+    if (currentRow > 6) break;
+    var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
+    classes.forEach(function(className) {
+      if (playerOne) {
+        if (className == 'red') {
+          count++;   
+        }
+      } else {
+        if (className == 'yellow') {
+          count++;
+        }
+      }
+    })
+  }
+
+  // diagonal up
+  currentRow = rowNum;
+  for (var i = colNum - 1; i > 0; i--) {
+    currentRow = currentRow + 1;
+    if (currentRow > 6) break;
+    var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
+    classes.forEach(function(className) {
+      if (playerOne) {
+        if (className == 'red') {
+          count++;   
+        }
+      } else {
+        if (className == 'yellow') {
+          count++;
+        }
+      }
+    })
+  }
+
+  if (count >= 4) alert('Winner!');
 
   ////////////////////
   // Horizontal Winner
