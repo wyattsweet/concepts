@@ -1,0 +1,19 @@
+.slot {
+  display: inline-block;
+  border: 1px solid black;
+  height: 7em;
+  width: 7em;
+  border-radius: 100%;
+}
+
+#banner {
+  display: none;
+}
+
+.red {
+  background: red;
+}
+
+.yellow {
+  background: yellow;
+}
