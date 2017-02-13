@@ -65,7 +65,12 @@ function checkWinner(element, playerOne) {
     })
   }
 
-  // check diagonal winner up
+  ////////////////////
+  // Diagonal Winner
+  ///////////////////
+
+  // diagonal up
+  count = 1;
   var currentRow = rowNum;
   for (var i = colNum + 1; i < 5; i++) {
     currentRow = currentRow - 1;
@@ -84,19 +89,66 @@ function checkWinner(element, playerOne) {
     })
   }
 
-
-  // check diagonal winner down
+  // diagonal down
   currentRow = rowNum;
   for (var i = colNum - 1; i > 0; i--) {
     currentRow = currentRow + 1;
     if (currentRow > 6) break;
     var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
-    console.log(classes);
+    classes.forEach(function(className) {
+      if (playerOne) {
+        if (className == 'red') {
+          count++;   
+        }
+      } else {
+        if (className == 'yellow') {
+          count++;
+        }
+      }
+    })
   }
 
-  // check horizontal right winner
-  // check horizontal left winner
-  
+
+  ////////////////////
+  // Horizontal Winner
+  ///////////////////
+
+  // horizontal right
+  count = 1;
+  var currentRow = rowNum;
+  var colCutoff = colNum + 3 > 7 ? 7 : colNum + 3; 
+  for (var i = colNum + 1; i <= colCutoff; i++) {
+    var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
+    classes.forEach(function(className) {
+      if (playerOne) {
+        if (className == 'red') {
+          count++;   
+        }
+      } else {
+        if (className == 'yellow') {
+          count++;
+        }
+      }
+    })
+  }
+
+  // horizontal left 
+  currentRow = rowNum;
+  var colCutoff = colNum - 3 > 0 ? colNum - 3 : 1;
+  for (var i = colNum - 1; i >= colCutoff; i--) {
+    var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
+    classes.forEach(function(className) {
+      if (playerOne) {
+        if (className == 'red') {
+          count++;   
+        }
+      } else {
+        if (className == 'yellow') {
+          count++;
+        }
+      }
+    })
+  }
 
   if (count >= 4) alert('Winner!');
 }
