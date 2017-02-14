@@ -46,11 +46,10 @@ function checkWinner(element, playerOne) {
   var colNum = parseInt(col[col.length-1]);
   var row = $(element).parent()[0].classList[0];
   var rowNum = parseInt(row[row.length-1]);
-
   var count = 1;
   var currentRow = rowNum + 1;
 
-  ////////////////////
+  ////////)///////////
   // verticle 
   ///////////////////
   
@@ -70,7 +69,11 @@ function checkWinner(element, playerOne) {
     })
   }
 
-  if (count >= 4) alert('Winner!');
+  if (count >= 4 && playerOne) {
+    alert('player one wins!')
+  } else if (count >= 4) {
+    alert('player two wins!')
+  };
 
   ////////////////////
   // Diagonal Right
@@ -115,7 +118,11 @@ function checkWinner(element, playerOne) {
     })
   }
 
-  if (count >= 4) alert('Winner!');
+  if (count >= 4 && playerOne) {
+    alert('player one wins!')
+  } else if (count >= 4) {
+    alert('player two wins!')
+  };
 
   ////////////////////
   // Diagonal left 
@@ -151,7 +158,6 @@ function checkWinner(element, playerOne) {
     currentRow = currentRow - 1;
     if (currentRow < 1) break;
     var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
-    console.log(classes);
     classes.forEach(function(className) {
       if (playerOne) {
         if (className == 'red') {
@@ -165,7 +171,11 @@ function checkWinner(element, playerOne) {
     })
   }
 
-  if (count >= 4) alert('Winner!');
+  if (count >= 4 && playerOne) {
+    alert('player one wins!')
+  } else if (count >= 4) {
+    alert('player two wins!')
+  };
 
   ////////////////////
   // Horizontal Winner
@@ -208,5 +218,9 @@ function checkWinner(element, playerOne) {
     })
   }
 
-  if (count >= 4) alert('Winner!');
+  if (count >= 4 && playerOne) {
+    alert('player one wins!')
+  } else if (count >= 4) {
+    alert('player two wins!')
+  };
 }
