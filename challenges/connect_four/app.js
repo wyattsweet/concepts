@@ -145,10 +145,13 @@ function checkWinner(element, playerOne) {
 
   // diagonal up
   currentRow = rowNum;
+  var colCutoff = (colNum - 3 > 0) ? 1 : colNum - 3;
+
   for (var i = colNum - 1; i > 0; i--) {
-    currentRow = currentRow + 1;
-    if (currentRow > 6) break;
+    currentRow = currentRow - 1;
+    if (currentRow < 1) break;
     var classes = $('.row' + currentRow + ' .col' + i)[0].classList;
+    console.log(classes);
     classes.forEach(function(className) {
       if (playerOne) {
         if (className == 'red') {
