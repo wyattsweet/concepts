@@ -33,17 +33,3 @@ noNumber() // 2
 // Lexical scope defines the rules for how variable names are resolved in nested functions, inner functions contain the scope of their
 // outer parent and also inherit variables from these outer functions. 
 
-function fun() {
-  console.log(x);
-}
-
-function dummy() {
-  fun();
-}
-
-dummy();
-
-
-
-
-
