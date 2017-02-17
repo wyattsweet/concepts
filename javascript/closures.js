@@ -1,26 +1,35 @@
-var me = 'Wyatt Earp'
+// What are Closures in JavaScript?
 
-function greetMe() {
-  console.log('hello,', me + '!');
+// Closures are when a function is able to remember and access its lexical scope, even when that function
+// is executing outside its lexical scope.
+
+// a really good example of closures in action
+
+function foo() {
+
+  var a = 2;
+
+  function bar() {
+    console.log(a)
+  }
+
+  return bar;
+
 }
 
-greetMe(); // hello, Wyatt Earp!
+var baz = foo();
 
-// greetMe() is called without passing name in, so when console.log calls me inside of greetMe it has
-// the ability to look-up to its parent scope for the 'me' variable. Some languages do not allow you to 
-// do this, you would be required to pass in me.
+baz(); // 2
 
-var me = 'somebody'
+// bar is executed on line 21, but it is executed outside of its
+// declared lexical scope
 
-function greetMe() {
-  console.log('hello,', me + '!');
-}
+// The function bar has lexical scope access to foo
+// After we execute foo we assign the remaining value to baz
 
-me = 'Doc Holiday'
+// Usually after we execute bar, we would expect that the entire inner scope of foo would go away
+// because the JS runtime engine employs garbage collection to free up memory once it's no longer in use
+// but closures doesn't let that happen because bar is still in use. Bar has a lexical scope closure
+// over foo(), which keeps the scope alive for bar() to reference at a later time. 
 
-greetMe(); // hello, Doc Holiday!
-// clojures look-up and take the final result of the outer scope
-//
-
-// Clojures are one of those things that permiates the entire language
-// It makes a lot of things possible, like callbacks
+// bar still has a reference to that scope, and that reference is called closure!
