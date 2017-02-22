@@ -1,0 +1,10 @@
+Implicit and Explicit conversion is used when you need to change the data type of a variable
+
+Implicit conversion is used when an equation has more than one data type, such as an int and a double
+If you multiply 10 x 15.75 result would be 157.50, implicit conversion automatically includes the fraction
+
+Explicit conversion happens when the programmer exlicitly changes the data type of a variable
+
+temporary conversion
+(double)(3 + 5 + 8)/3 - the values 3, 5, and 8 are temporarily converted to a double
+
