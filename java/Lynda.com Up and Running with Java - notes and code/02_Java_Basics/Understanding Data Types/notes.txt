@@ -1,0 +1,22 @@
+Java is considered strict data typing language
+Each variable must be declared with with a data type and it can't be changed.
+
+Primitive Data Types
+
+Characters
+Allows you to store a single character, number or symbol – char letterA = 'a';
+character must be single quotes
+
+Boolean
+True or False
+boolean result = true;
+
+Integers (no fractions) each for a different size of number
+ byte
+ short
+ int
+ long
+
+Rational Numbers (fractions)
+ float
+ double  
