@@ -33,3 +33,27 @@ noNumber() // 2
 // Lexical scope defines the rules for how variable names are resolved in nested functions, inner functions contain the scope of their
 // outer parent and also inherit variables from these outer functions. 
 
+// Lexical scope can be cheated using the eval() method
+
+function foo(str, a) {
+  eval( str );
+  console.log(a, b);
+}
+
+var b = 2;
+//foo ( "var b = 3;", 1 ); // 1 3
+
+// Eval was used to modify or "cheat" the scope of foo. It created the b variable within foo from the string literal and 
+// found when b was logged.
+//
+function bar(str) {
+  // below uses strict mode in the browser!
+  "use strict";
+  eval( str );
+  console.log( a ); // a is not defined
+}
+
+bar ( "var a = 2" );
+
+// The use-case for dunamically generated code inside your application is incredibly rare as the performance degradations are almost never worth it
+
