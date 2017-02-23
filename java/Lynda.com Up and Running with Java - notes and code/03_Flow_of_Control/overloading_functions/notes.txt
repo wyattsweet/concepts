@@ -1,0 +1,1 @@
+Two functions can have the same name but they must have different parameters or a different return type. This is called overloading.

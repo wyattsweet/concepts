@@ -1,0 +1,5 @@
+The Java API offers software packages that you can leverage in your application
+
+There are packages for graphics, UI, networking, sound, databases, math and much more
+
+

@@ -1,0 +1,14 @@
+two types of parameters - 
+
+call by reference and call by value
+
+CBR allows the calling program and the method to point to the same address in memory that holds the value of the variable. Changes made to the value are reflected back to the calling program.
+
+CBV makes a copy of the contents, changes made to the value are not reflected back to the calling program.
+
+arrays are always pass-by or call by reference
+
+primitive data types are considered call by value
+ arrays and objects are call by reference
+
+see exercise file 03_06 for example program that uses both

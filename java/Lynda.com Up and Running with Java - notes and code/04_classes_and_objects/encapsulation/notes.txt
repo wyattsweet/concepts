@@ -1,0 +1,5 @@
+Encapsulation allows the programmer to hide the definition of instance data and methods from the user.
+Ensures data structures and operators are used as intended. It's kind of a protective barrier that prevents code and 
+data from being randomly accessed by other code defined outside the class.
+
+

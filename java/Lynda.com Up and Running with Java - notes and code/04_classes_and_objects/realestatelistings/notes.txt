@@ -1,0 +1,15 @@
+The class is a blueprint for an object
+classes are meant to represent the state and behavior of real world objects
+
+All classees contain 
+  instance data
+  constructors
+  methods
+
+Why Classes?
+  Classes are resuseable
+  excapsulate data to enforce data integrity
+  data is defined as private within the classes
+  data is accessed using get and set methods (otherwise known as accessor and mutator methods) 
+
+

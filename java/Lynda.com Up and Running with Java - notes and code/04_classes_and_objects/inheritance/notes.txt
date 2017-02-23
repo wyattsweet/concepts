@@ -1,0 +1,8 @@
+inheritance occurs when a new class "inherits" the data and methods from another class
+Benefit is you can create a generic class and allow more specific classes to inherit from 
+it, plus add more features. Use keywords "extends" and "implements".
+
+Polymorphism
+Another benefit of OOP. Sometimes methods need to behave differently depending on the new
+class definition. a bug class might have a method move. If it's inherited by a grasshopper move would mean jump,
+whereas if it's inherited by a ladybug it means to fly. Polymorphism addresses this issue.
