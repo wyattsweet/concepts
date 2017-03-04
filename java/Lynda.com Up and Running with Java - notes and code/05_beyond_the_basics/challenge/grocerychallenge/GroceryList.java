@@ -18,6 +18,9 @@ public class GroceryList {
   
     ArrayList<GroceryItem> groceries = new ArrayList<GroceryItem>();
     boolean more = true;
+    boolean exists = false;
+    boolean add;
+
     Scanner in = new Scanner(System.in);
 
     GroceryItem item = new GroceryItem("apples", 3.23);
@@ -36,16 +39,41 @@ public class GroceryList {
     groceries.add(item);
 
     while (more) {
+      exists = false;
       System.out.println("What item are you looking for? ");
       String itemName = in.next();
 
       for (int i = 0; i < groceries.size(); i++) {
         item = groceries.get(i);
-        System.out.println(item.getName());
+        if (item.getName().equalsIgnoreCase(itemName)) {
+          exists = true;
+        }
       }
 
-      more = false;
+      if (exists) {
+        more = addMore();
+      } else {
+        System.out.println("Would you like to add the item? true or false");
+        add = in.nextBoolean();
+        if (add) {
+          item = new GroceryItem(itemName, 5);
+          groceries.add(item);
+          more = addMore();
+        }
+      }
+    }
+
+    for(int i = 0; i < groceries.size(); i++) {
+      System.out.println(groceries.get(i).getName());
     }
   }
 
+  public static boolean addMore () {
+    boolean more = false;
+    Scanner in = new Scanner(System.in);
+
+    System.out.println("We got it! Would you Like to add more items? true or false");
+    more = in.nextBoolean();
+    return more;
+  }
 }
