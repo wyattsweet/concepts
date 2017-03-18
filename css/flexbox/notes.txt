@@ -1,0 +1,37 @@
+from this article – https://medium.freecodecamp.com/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af#.285a8tonx
+
+What is Flexbox? 
+
+Allows you to efficiently layout, align and distribute elements within your document regardless of 
+viewport size.
+
+You start by defining a flex-container on a parent element by using – display: flex or display: inline-flex
+
+parent becomes the flex container and children become the flex items.
+
+There are six items a flex container can take on: 
+
+  - flex-direction: row || column || row-reverse || column-reverse 
+
+The direction in which flex-items are laid along the main axis. Items can be laid out horizontally (main-axis), vertically (cross axis), reveresed, etc.
+
+  - flex-wrap: wrap || nowrap || wrap-reverse;
+
+  - flex-flow: row wrap; /*direction "row" and yes, please wrap the items.*/
+
+a shorthand property which takes flex-direction and flex-wrap
+
+  - justify-content: flex-start || flex-end || center || space-between || space-around
+
+justify content property defines how flex items are laid out on the main axis.
+
+  - align-items: flex-start || flex-end || center || stretch || baseline
+
+defines how flex-items are laid out on the cross axis.  
+
+baseline keeps the bottom of the content aligned in the flex-items
+
+  - align-content
+
+Takes the same values as align-items apart from baseline.
+Controls how the flex-items are aligned in a multi-line flex container.
