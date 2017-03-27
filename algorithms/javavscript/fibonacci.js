@@ -2,20 +2,31 @@
 // fibonacci series is 0-indexed and starts with 0
 
 function fib(n) {
-  if (n == 0) {
-    console.log(0);
-  } else if (n == 1) {
-    console.log(1);
-  } else if(n >= 3) {
-    valueOne = 0;
-    valueTwo = 1;
-    for (var i = 0; i < n - 1; i++) {
-      var holder = valueTwo;
-      valueTwo = valueOne + valueTwo;
-      valueOne = holder;
-    }
-    console.log(valueTwo);
+  if (n <= 2) {
+    return 1;
   }
+
+  valueOne = 0;
+  valueTwo = 1;
+  for (var i = 0; i < n - 1; i++) {
+    var holder = valueTwo;
+    valueTwo = valueOne + valueTwo;
+    valueOne = holder;
+  }
+
+  return valueTwo;
 }
 
-fib(5);
+console.log(fib(10));
+
+// Better recursive solution would be
+
+function fibRecursive(n) {
+  if (n <= 2) {
+    return 1;
+  }
+
+  return fibRecursive(n -1) + fibRecursive(n -2);
+}
+
+console.log(fibRecursive(10));

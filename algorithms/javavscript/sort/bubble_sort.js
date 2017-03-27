@@ -28,3 +28,5 @@ function bubble(arr) {
 }
 
 bubble([1, 3, 2, 4, 3]);
+
+// You have to use an outer and inner loop for this so the big O is O(n²)
